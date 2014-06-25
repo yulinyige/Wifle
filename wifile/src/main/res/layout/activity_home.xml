@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        style="@style/CommomTitle"
+        android:text="Wifile文件分享"
+        android:background="@drawable/header_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <ImageView
+            android:id="@+id/home_ap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qq"
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:clickable="true" />
+
+        <ImageView
+            android:id="@+id/home_circleImage_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/home_circleImage_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/home_circleImage_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ToggleButton
+            android:id="@+id/home_toggle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff=""
+            android:textOn=""
+            android:layout_centerInParent="true"
+            android:background="@drawable/service_selector" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/home_hint_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:background="@drawable/tips_bg"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="在浏览器输入:"
+            android:layout_margin="16dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/standar_orange"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/home_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/standar_orange"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="0800360210 陈伟基"
+        android:textColor="@color/standar_gray"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="right" />
+
+
+</LinearLayout>

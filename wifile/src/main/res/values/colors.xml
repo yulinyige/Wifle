@@ -1,0 +1,6 @@
+<resources>
+    <!-- standar color -->
+    <color name="standar_orange">#FFFF9500</color>
+    <color name="standar_gray">#FFC0C0C0</color>
+    <color name="deep_orange">#FFC67536</color>
+</resources>

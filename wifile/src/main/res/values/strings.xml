@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WiFile</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="wifi_point">WIFI热点</string>
+
+    <string name="wifi_ssid"> SSID </string>
+    <string name="wifi_password"> 密码 </string>
+    <string name="wifi_setting_title">修改SSID和密码</string>
+
+    <string name="wifi_click_to_create">一切就绪,点击创建WIFI热点.</string>
+    <string name="wifi_created">WIFI热点已创建\n SSID: %1$s \n 密码: %2$s</string>
+    <string name="wifi_unknown_error">Wifi抽风了,发生了错误.</string>
+    <string name="wifi_creating">热点创建中...</string>
+    <string name="wifi_disabling">热点关闭中...</string>
+</resources>

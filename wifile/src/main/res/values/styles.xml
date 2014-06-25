@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DialogTheme" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Activity 标题 -->
+    <style name="CommomTitle">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/standar_orange</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,48 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.qiuwan.wifile">
+    <!-- Note:这个文件的作用是:声明权限,Activity,service -->
+
+    <!-- 所用到的权限. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Application的配置. -->
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:name=".WifileApplication">
+
+        <!--主界面Activity-->
+        <activity
+            android:name=".ui.HomeActivityV2"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--AP设置的Activity-->
+        <activity android:name=".ui.APConfigActivity" />
+
+        <activity
+            android:name=".ui.SettingDialogActivity"
+            android:label="@string/wifi_setting_title"
+            android:theme="@style/DialogTheme" />
+
+        <!-- 已不用 -->
+        <service android:name=".service.WebService" />
+
+        <!-- Web服务的service -->
+        <service android:name=".serverV2.WifileService" />
+
+    </application>
+
+</manifest>

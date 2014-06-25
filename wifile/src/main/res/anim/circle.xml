@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!-- WIFI信号的动画.1.alpha透明度的变化.2.大小的变化 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:repeatCount="100"
+    android:duration="3000"
+    android:interpolator="@android:interpolator/accelerate_decelerate">
+
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0" />
+
+    <scale
+        android:fromXScale="100%"
+        android:toXScale="500%"
+        android:fromYScale="100%"
+        android:toYScale="500%"
+        android:pivotX="50%"
+        android:pivotY="50%" />
+
+</set>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WiFile -- By 郑秋婉</title>
+    <meta http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n.properties-min-1.0.9.js"></script>
+    <script type="text/javascript" src="js/yting.js"></script>
+    <script type="text/javascript" src="swfupload/swfupload.js"></script>
+    <script type="text/javascript" src="swfupload/handler.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+        padding-top: 100px;
+        font: 12px/18px "Microsoft Yahei", Helvetica, Arial, Verdana, sans-serif;
+        color: rgb(51, 51, 51);
+        -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+        outline:0;
+        }
+
+        #header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #dddddd;
+        }
+
+        #tip-slot {
+        display: none;
+        }
+
+        .swfupload {
+        position: absolute;
+        z-index: 1;
+        }
+
+        .bordered-table thead th {
+        text-align: center;
+        }
+
+        .bordered-table th {
+        line-height: 15px;
+        }
+
+        .bordered-table td {
+        line-height: 12px;
+        }
+
+        .label {
+        font-size: 12px;
+        }
+
+        .tab-title {
+        font-size: 18px;
+        line-height: 36px;
+        color: #404040;
+        font-weight: bold;
+        }
+
+        #tab-files {
+        table-layout: fixed;
+        }
+
+        #tab-files tbody td {
+        /*width: 100%;*/
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        vertical-align: middle;
+        }
+
+        #tab-files td .btn {
+        font-size: 12px;
+        padding: 3px 10px;
+        font-weight: normal;
+        margin: 0;
+        }
+
+        #table-state-content {
+        margin-left: 10px;
+        font-weight: normal;
+        font-size: 12px;
+        color: red;
+        display: none;
+        }
+
+        #upload-state {
+        margin-left: 10px;
+        }
+
+        .file-icon {
+        width: 24px;
+        margin-right: 8px;
+        }
+
+        #ad-slot-header {
+        margin: 5px 0;
+        }
+    </style>
+    <script type="text/javascript">
+        var currentDirectory = "";
+        var kApp = { os: "Android", version: 1.0 };
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+<div id="header" class="topbar">
+    <div class="container">
+        <img src="/img/logo.png"/>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="tip-slot">
+        <div class="alert-message warning">
+            <a class="close" href="#">×</a>
+
+            <p id="tip-content"></p>
+        </div>
+    </div>
+
+    <div class="page-header">
+
+        <p>
+            <span id="SpanButtonPlaceHolder"></span>
+            <span class="span6">
+                <a ex.i18n="upload_file" class="btn primary"></a>
+            </span>
+
+            <span id="upload-state" style="display: none;">
+            <span ex.i18n="uploading_status" class="label important">Status</span>&nbsp;<span
+                    ex.i18n="uploading_file" class="label warning" id="upload-state-content">Uploading file, Please wait...</span>
+            </span>
+
+            <br/>
+
+        <div id="FileProgressContainer" style="visibility:hidden;">
+            <div style="border:1px solid #ccc;padding:2px;">
+                <div id="FileProgressPercent"
+                     style="height:4px;background-color:#46A546;width:100%"></div>
+            </div>
+        </div>
+
+        </p>
+
+        <div id="installFlash" style="display:none;" class="alert-message error">
+            <p><a href="http://www.adobe.com/go/getflashplayer">You need Adobe Flash to upload
+                file.</a></p>
+        </div>
+
+    </div>
+
+    <div>
+        <div>
+            <span ex.i18n="file_list" class="tab-title">File List</span><span ex.i18n="loading"
+                                                                              id="table-state-content">Loading ...</span>
+        </div>
+
+        <ul id="breadcrumb" class="breadcrumb">
+            <li><a href="javascript:void(0);" onclick="list('');return false;">Home</a> <span
+                    class="divider">/</span></li>
+        </ul>
+
+        <div id="ad-slot-header">
+        </div>
+
+        <table id="tab-files" class="bordered-table zebra-striped">
+            <thead>
+            <tr>
+                <th ex.i18n="tab_file_name">Name</th>
+                <th ex.i18n="tab_modified_date" style="width:130px;">Date modified</th>
+                <th ex.i18n="tab_file_type" style="width:110px;">Type</th>
+                <th ex.i18n="tab_file_size" style="width:90px;">Size</th>
+                <th ex.i18n="tab_action_download" style="width:90px;">Download</th>
+                <th ex.i18n="tab_action" style="width:120px;">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="6" style="text-align:center" ex.i18n="tab_loading_file_list">Loading
+                    File List ...
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div id="ad-slot-footer">
+    </div>
+
+    <footer>
+        <p class="pull-left"></p>
+
+        <p class="pull-right">By ***</p>
+    </footer>
+
+</div>
+<!-- /container -->
+
+<div id="right-corner-tip" class="hide alert-message block-message info"></div>
+
+</body>
+</html>
